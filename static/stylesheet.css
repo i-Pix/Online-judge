@@ -1,0 +1,198 @@
+html,body{
+	padding-top: 1px;
+    background-color:#1e272e;
+    font-family: Consolas;
+    height:100vh;
+    overflow : auto!important;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.CodeMirror{
+    height: 94vh;
+    min-height: 94vh;
+    overflow: auto !important;
+    font-size : 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width:2px;
+    border-color: white;
+    padding:0px;
+    overflow-x: hidden;
+}
+
+#CODE {
+	border-radius: 10px;
+    border-style: solid;
+    border-width:2px;
+    border-color: white;
+    padding:0px;
+    overflow: scroll;
+    overflow: hidden;
+}
+#lang {
+	background-color:#282a36;
+	z-index: 10;
+	width : 120%;
+	font-size : 18px;
+	color : white;
+	border-radius:10px;
+	border-style: solid;
+    border-width:2px;
+    border-color: white;
+}
+#language_options {
+	color : white;
+	font-size:18px;
+}
+#label_code {
+	color : #4cd137;
+	font-size : 18px;
+}
+ #submit_label { 
+	color : white;
+	font-size: 20px;
+	margin-top: 15px;
+}
+#input_label {
+	color : white;
+	font-size: 15px;
+	margin-top: 5px;
+}
+#output_label {
+	color : white;
+	font-size: 18px;
+}
+#change_problem_label {
+	color : white;
+	font-size: 18px;
+}
+
+#change_problem {
+	float:left;
+	margin-right: 20px;
+	font-size: 15px;
+	color :#f7f1e3;
+	background-color: #4cd137;
+	border-style: solid;
+    border-width:2px;
+    border-color:#ffd32a;
+}
+#input {
+
+	overflow: auto !important;
+	width: 100%;
+	color:#4cd137;
+	height : 17vh;
+	font-size : 20px;
+	background-color:#1e272e;
+	border-radius: 10px;
+	border-style: solid;
+    border-width:2px;
+    border-color: white;
+
+}
+
+#submit_button {
+	font-size: 20px;
+	color :#f7f1e3;
+	background-color: #4cd137;
+	border-style: solid;
+    border-width:2px;
+    border-color:#ffd32a;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#showHideOutput {
+	float:right;
+	margin-right: 40px;
+	font-size: 15px;
+	color :#f7f1e3;
+	background-color: #4cd137;
+	border-style: solid;
+    border-width:2px;
+    border-color:#ffd32a;
+}
+#output {
+	padding:10px;
+	overflow: auto !important;
+	color:#4cd137;
+	font-size : 20px;
+	width: 100%;
+	height : 25vh;
+	background-color:#1e272e;
+	border-radius: 10px;
+	border-style: solid;
+    border-width:2px;
+    border-color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-bottom: 10px;
+}
+#problemStatementDiv {
+	overflow-y: hidden;
+    overflow-x: hidden;
+}
+#problemStatement {
+	height:94vh;
+	min-height: 94vh;
+	overflow: auto !important;
+	border-radius: 10px;
+    border-style: solid;
+    border-width:2px;
+    border-color: white;
+    padding-left: 10px;
+    padding-bottom : 10px;
+    padding-top : 0px;
+    padding-right: 0px;
+    
+}
+#pName {
+	position: relative;
+	top : 0px;
+	color : white;
+}
+
+#pStats {
+	color : white;
+	line-height: 7px;
+}
+#pStatsData
+{
+	color : #4cd137;
+}
+#pDesc {
+	color : white;
+}
+
+
+#leftSide {
+	box-sizing: border-box;
+	height:100vh;
+	max-height: 100vh;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+#rightSide {
+	box-sizing: border-box;
+	height:100vh;
+	max-height: 100vh;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 4px;
+    height : 3px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #1e272e;
+    border-radius: 10px;
+    background: #4cd137;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e272e;
+}
