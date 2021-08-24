@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <!-- Codemirror CSS/JS files -->
+    <script src="/static/codemirror/lib/codemirror.js"></script> <!-- Default Codemirror JS file -->
+    <link rel="stylesheet" href="/static/codemirror/lib/codemirror.css">  <!--Default Codemirror CSS -->
+    <script src="/static/codemirror/addon/edit/closebrackets.js"></script> <!--Bracket Closing -->
+    <script src="/static/codemirror/addon/edit/matchbrackets.js"></script>  <!--Bracket Matching -->
+    <link rel="stylesheet" href="/static/codemirror/theme/dracula.css"> <!-- Theme CSS -->
+    <!--Codemirror Syntax higlighting JS files -->
+    <script src="/static/codemirror/mode/clike/clike.js"></script>
+    <script src="/static/codemirror/mode/python/python.js"></script>
+
+<!--Bootstrap CSS/JS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- Custom Stylesheet -->
+    <link href="/static/style.css" rel="stylesheet">
+    
+    <title>Online Judge</title>
+    
+</head>
+<body>
+    <div class = "container-fluid">
+        <form id="codeEditor" action="/" method="post">
+            <input type="hidden" name="Query" id="Query" value="submit"> <!--To check Submission Type -->
+
+            <div class="row">
+                <div class="container-fluid col-lg-6" id="leftSide">
+                    <div class ="col-lg-2">
+                        <select name="lang" id="lang"  onchange="LanguageChanged()">
+                            <option value = Python3 id="language_options" >Python 3</option>
+                            
+                                
+                                    <option value= C id="language_options"  >C</option>
+                                
+                            
+                                
+                                    <option value= Cpp id="language_options"  >C++</option>
+                                
+                            
+                                
+                                    <option value= Cpp14 id="language_options"  >C++14</option>
+                                
+                            
+                                
+                                    <option value= Csharp id="language_options"  >C#</option>
+                                
+                            
+                                
+                                    <option value= Java id="language_options"  >Java</option>
+                                
+                            
+                                
+                                    <option value= Perl id="language_options"  >Perl</option>
+                                
+                            
+                                
+                                    <option value= Php id="language_options"  >Php</option>
+                                
+                            
+                                
+                                    <option value= Python id="language_options"  >Python</option>
+                                
+                            
+                                
+                            
+                                
+                                    <option value= Scala id="language_options"  >Scala</option>
+                                
+                            
+                        </select>
+                    </div>
+                    <div class="col-lg-8">
+                        <label for="code" id="label_code">Write your code here:</label>
+                    </div>
+                    <div class="col-lg-12">
+                        <div   id= "CODE">
+                            <textarea id="code" name="code"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <label for="input" id="input_label">Input:</label>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <textarea name="input" id="input"></textarea>
+                    </div>
+
+                    <div class="col-lg-2" id="submit_label">
+                        <label for="submit">Submit:</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type ="submit" class="btn btn-success" value="Submit" id="submit_button" onclick="submit_button()">
+                    </div>
+                    
+                </div>
+
+                <div class="container-fluid col-lg-6" id="rightSide">
+                    <div class="row" >
+                        <div class="col-lg-3" id="change_problem_label">
+                        <label for="change_problem">Change Problem:</label>
+                        </div>
+                        
+                            <select name="selectedProblem" class="col-lg-4 btn btn-success" id="change_problem" onchange="change_problemfn()">
+                                <option value ="sort-and-reverse-vector/1">sort-and-reverse-vector/1</option>
+                                
+                                    
+                                        <option value ="rotate-array-by-n-elements/0" >rotate-array-by-n-elements/0</option>
+                                    
+                                
+                                    
+                                
+                                    
+                                        <option value ="learn-to-comment/1" >learn-to-comment/1</option>
+                                    
+                                
+                                    
+                                        <option value ="arraylist-operation/1" >arraylist-operation/1</option>
+                                    
+                                
+                                    
+                                        <option value ="max-distance-between-same-elements/1" >max-distance-between-same-elements/1</option>
+                                    
+                                
+                                    
+                                        <option value ="maximum-in-struct-array/1" >maximum-in-struct-array/1</option>
+                                    
+                                
+                                    
+                                        <option value ="addition-of-submatrix/0" >addition-of-submatrix/0</option>
+                                    
+                                
+                                    
+                                        <option value ="sum-of-fai-aj-over-all-pairs-in-an-array-of-n-integers/0" >sum-of-fai-aj-over-all-pairs-in-an-array-of-n-integers/0</option>
+                                    
+                                
+                                    
+                                        <option value ="balanced-array/0" >balanced-array/0</option>
+                                    
+                                
+                                    
+                                        <option value ="counts-zeros-xor-pairs/0" >counts-zeros-xor-pairs/0</option>
+                                    
+                                
+                                    
+                                        <option value ="play-with-an-array/1" >play-with-an-array/1</option>
+                                    
+                                
+                                    
+                                        <option value ="ishaan-loves-chocolates/0" >ishaan-loves-chocolates/0</option>
+                                    
+                                
+                                    
+                                        <option value ="largest-fibonacci-subsequence/0" >largest-fibonacci-subsequence/0</option>
+                                    
+                                
+                                    
+                                        <option value ="need-some-change/1" >need-some-change/1</option>
+                                    
+                                
+                            </select> 
+                       
+                        <div class="col-lg-1">
+                            <label for="output" id="output_label" style="margin-left:15px; margin-top: 5px;">Output:</label>
+                        </div>
+                        <button class="col-lg-2 btn btn-success" id="showHideOutput" onclick="showHideOutputfn()">
+                               
+                                Show Output
+                            
+                        </button>
+
+                    </div>
+                    <div class="col-lg-12">
+                        <div name="output" id="output" style="display:none">
+                            
+                                
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" id="problemStatementDiv">
+                        <div id="problemStatement">
+                            
+                                <H1 id="pName">Sort and Reverse Vector</H1>
+                                <p id="pStats">Difficulty : <span id="pStatsData"> 1 </span> Accuracy : <span id="pStatsData"> 71.86% </span> Submissions : <span id="pStatsData"> 11690 </span> </p>
+                                
+                                    
+                                        <p id = "pStatsData"></p>
+                                        
+                                    
+                                        <p id = "pStatsData">You are given a vector V of size n. You need to sort it and reverse it.</p>
+                                        
+                                    
+                                        <p id = "pStatsData">Example 1:</p>
+                                        
+                                    
+                                        <p id = "pStatsData">Your Task:</p>
+                                        
+                                            <p id="pDesc">Since this is a function problem, you don&#39;t need to take any input. Just complete the provided functions sortVector() and reverseVector(). Return the vector after performing suitable operations.</p>
+                                        
+                                    
+                                        <p id = "pStatsData">Constraints:</p>
+                                        
+                                            <p id="pDesc">1 &lt;= n &lt;= 107</p>
+                                        
+                                            <p id="pDesc">0 &lt;= Vi &lt;= 107</p>
+                                        
+                                    
+                            
+                        </div>
+                    </div>
+                    
+                </div>   
+            </div>
+            
+
+
+            
+        </form>
+    </div>
+<!-- Codemirror Implementation -->
+    <script>
+             var editor = CodeMirror.fromTextArea(document.getElementById("code"),{
+                mode: "text/x-python",
+                 theme: "dracula",
+                 lineNumbers: true,
+                 autoCloseBrackets: true,
+                 matchBrackets:true,
+                 noHScroll:true
+             });
+    </script>
+<!-- Custon JS functions-->
+    <script type="text/javascript">
+        function submit_button()
+        { 
+            document.getElementById('Query').value='submit'; // Change submission type to Submit
+            document.getElementById('codeEditor').submit(); // Submit the form
+        }
+
+        function LanguageChanged() 
+        {
+            document.getElementById('Query').value='language_changed'; // Change Submission type to Lang Changed
+            document.getElementById('codeEditor').submit();
+        }
+
+        function showHideOutputfn() 
+        {
+            
+                document.getElementById('Query').value='show_output'; // Change Submission type to Show Output
+            
+            document.getElementById('codeEditor').submit();
+        }
+
+        function change_problemfn() 
+        {
+            document.getElementById('Query').value='change_problem'; // Change Submission type to Lang Changed
+            document.getElementById('codeEditor').submit();
+        }
+    </script>
+
+    </body>
+</html>
